@@ -21,4 +21,6 @@
 
 LOCAL_PATH := $(call my-dir)
 
-PRODUCT_MAKEFILES := device/samsung/loganreltexx/omni_loganreltexx.mk
+ifeq ($(TARGET_DEVICE), loganreltexx)
+include $(call all-makefiles-under,$(LOCAL_PATH))
+endif
