@@ -50,8 +50,6 @@ TARGET_OTA_ASSERT_DEVICE := loganreltexx,loganrelte,GT-S7275R,GT-S7275B,GT-S7275
 BOARD_USES_MMCUTILS := true
 BOARD_HAS_NO_MISC_PARTITION := true
 COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
-# Qualcomm support
-BOARD_USES_QCOM_HARDWARE := true
 
 # Partition sizes
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -88,7 +86,6 @@ TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 TW_NO_EXFAT_FUSE := false
 TW_NO_EXFAT := false
 TW_EXCLUDE_NANO := true
-TW_EXCLUDE_BASH := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_RECOVERY_SWIPE := true
