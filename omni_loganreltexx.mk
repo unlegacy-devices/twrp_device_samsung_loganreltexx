@@ -16,6 +16,9 @@
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
+# Inherit some QCOM configuration tools
+$(call inherit-product, device/qcom/common/Android.mk)
+
 # Inherit some common OmniROM stuff.
 $(call inherit-product, vendor/omni/config/common.mk)
 
