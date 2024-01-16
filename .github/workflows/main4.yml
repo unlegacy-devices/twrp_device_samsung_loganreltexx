@@ -20,7 +20,7 @@ jobs:
         sudo add-apt-repository "deb http://security.ubuntu.com/ubuntu trusty main restricted universe multiverse"
         sudo add-apt-repository "deb http://security.ubuntu.com/ubuntu trusty-security main restricted universe multiverse"
         sudo apt-get update
-        sudo apt-get install gperf gcc-multilib gcc-10-multilib g++-multilib g++-10-multilib libc6-dev libncurses5-dev x11proto-core-dev libx11-dev tree lib32z-dev libgl1-mesa-dev libxml2-utils xsltproc bc ccache lib32z1-dev liblz4-tool libsdl1.2-dev libwxgtk3.0-gtk3-dev libxml2 lzop pngcrush schedtool squashfs-tools imagemagick libbz2-dev lzma ncftp qemu-user-static libstdc++-10-dev axel python openjdk-7-jre
+        sudo apt-get install gperf gcc-multilib gcc-10-multilib g++-multilib g++-10-multilib libc6-dev libncurses5-dev x11proto-core-dev libx11-dev tree lib32z-dev libgl1-mesa-dev libxml2-utils xsltproc bc ccache lib32z1-dev liblz4-tool libsdl1.2-dev libwxgtk3.0-gtk3-dev libxml2 lzop pngcrush schedtool squashfs-tools imagemagick libbz2-dev lzma ncftp qemu-user-static libstdc++-10-dev axel python openjdk-7-jre-headless
     - name: Syncing CyanogenMod sources
       run: |
         mkdir ~/TWRP
