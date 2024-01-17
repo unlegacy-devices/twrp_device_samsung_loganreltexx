@@ -30,10 +30,10 @@ jobs:
         cd ~/TWRP
         mkdir ~/.bin
         curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/.bin/repo
-        python3 ~/.bin/repo init --depth=1 -u https://github.com/LineageOS/android.git -b lineage-15.1
-        git clone https://github.com/MSM8930-Samsung/android_device_samsung_loganreltexx.git -b lineage-15.1 ~/TWRP/device/samsung/loganreltexx
-        git clone https://github.com/MSM8930-Samsung/android_kernel_samsung_msm8930-common-1 -b lineage-15.1 ~/TWRP/kernel/samsung/msm8930-common
-        git clone https://github.com/MSM8930-Samsung/proprietary_vendor_samsung_loganreltexx -b lineage-15.1 ~/TWRP/vendor/samsung/loganreltexx
+        python3 ~/.bin/repo init --depth=1 -u https://github.com/CyanogenMod/android.git -b cm-13.0
+        git clone https://github.com/MSM8930-Samsung/android_device_samsung_loganreltexx.git -b cm-13.0 ~/TWRP/device/samsung/loganreltexx
+        git clone https://github.com/MSM8930-Samsung/android_kernel_samsung_msm8930-common -b cm-13.0 ~/TWRP/kernel/samsung/msm8930-common
+        git clone https://github.com/MSM8930-Samsung/proprietary_vendor_samsung_loganreltexx -b cm-13.0 ~/TWRP/vendor/samsung/loganreltexx
         python3 ~/.bin/repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
     - name: Building LineageOS
       run: |
@@ -42,17 +42,20 @@ jobs:
         export PATH="$HOME/.jdk_7/java-se-7u75-ri/bin:$PATH"
         export JAVA_HOME="$HOME/.jdk_7/java-se-7u75-ri"
         cd ~/TWRP
-        git clone https://github.com/MSM8930-Samsung/android_device_samsung_qcom-common -b lineage-15.1 ~/TWRP/device/samsung/qcom-common
-        git clone https://github.com/MSM8930-Samsung/android_device_samsung_msm8930-common -b lineage-15.1 ~/TWRP/device/samsung/msm8930-common
-        git clone https://github.com/LineageOS/android_hardware_samsung -b lineage-15.1 ~/TWRP/hardware/samsung
-        git clone https://github.com/LineageOS/android_device_qcom_common -b lineage-15.1 ~/TWRP/device/qcom/common
-        git clone https://github.com/LineageOS/android_packages_resources_devicesettings -b lineage-15.1 ~/TWRP/packages/resources/devicesettings
+        git clone https://github.com/MSM8930-Samsung/android_device_samsung_qcom-common -b cm-13.0 ~/TWRP/device/samsung/qcom-common
+        git clone https://github.com/MSM8930-Samsung/android_device_samsung_msm8930-common -b cm-13.0 ~/TWRP/device/samsung/msm8930-common
+        git clone https://github.com/LineageOS/android_hardware_samsung -b cm-13.0 ~/TWRP/hardware/samsung
+        git clone https://github.com/LineageOS/android_device_qcom_common -b cm-13.0 ~/TWRP/device/qcom/common
+        git clone https://github.com/CyanogenMod/android_external_stlport -b cm-13.0 ~/TWRP/external/stlport
+        git clone https://github.com/CyanogenMod/android_vendor_nxp-nfc_opensource_Nfc -b cm-13.0 ~/TWRP/vendor/nxp-nfc/opensource/Nfc
+        git clone https://github.com/CyanogenMod/android_vendor_nxp-nfc_opensource_libnfc-nci -b cm-13.0 ~/TWRP/vendor/nxp-nfc/opensource/libnfc-nci
+        git clone https://github.com/CyanogenMod/android_vendor_nxp-nfc_opensource_frameworks -b cm-13.0 ~/TWRP/vendor/nxp-nfc/opensource/frameworks
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
         source build/envsetup.sh
         export ALLOW_MISSING_DEPENDENCIES=true
         export LC_ALL=C
-        lunch lineage_loganreltexx-eng
+        lunch cm_loganreltexx-eng
         make -j$(nproc --all) otapackage
         export PATH=$OLDPATH
         export JAVA_HOME=$OLDJAVAHOME
