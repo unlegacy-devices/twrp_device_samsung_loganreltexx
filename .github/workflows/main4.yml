@@ -1,4 +1,4 @@
-name: LineageOS CI
+name: LineageOS CI (SM-J320H)
 
 on:
   workflow_dispatch:
@@ -30,7 +30,7 @@ jobs:
         cd ~/TWRP
         mkdir ~/.bin
         curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/.bin/repo
-        python3 ~/.bin/repo init --depth=1 -u https://github.com/LineageOS/android.git -b lineage-15.0
+        python3 ~/.bin/repo init --depth=1 -u https://github.com/JDCTeam/manifests.git -b opt-cm-14.1
         git clone https://github.com/MSM8930-Samsung/android_device_samsung_loganreltexx.git -b cm-14.1 ~/TWRP/device/samsung/loganreltexx
         git clone https://github.com/MSM8930-Samsung/android_kernel_samsung_msm8930-common -b cm-14.1 ~/TWRP/kernel/samsung/msm8930-common
         git clone https://github.com/MSM8930-Samsung/proprietary_vendor_samsung_loganreltexx -b cm-14.1 ~/TWRP/vendor/samsung/loganreltexx
@@ -42,17 +42,19 @@ jobs:
         export PATH="$HOME/.jdk_7/java-se-7u75-ri/bin:$PATH"
         export JAVA_HOME="$HOME/.jdk_7/java-se-7u75-ri"
         cd ~/TWRP
+        rm -rf ~/TWRP/device/samsung/qcom-common
+        rm -rf ~/TWRP/device/qcom/common
+        rm -rf ~/TWRP/hardware/samsung
         git clone https://github.com/MSM8930-Samsung/android_device_samsung_qcom-common -b cm-14.1 ~/TWRP/device/samsung/qcom-common
         git clone https://github.com/MSM8930-Samsung/android_device_samsung_msm8930-common -b cm-14.1 ~/TWRP/device/samsung/msm8930-common
         git clone https://github.com/LineageOS/android_hardware_samsung -b cm-14.1 ~/TWRP/hardware/samsung
         git clone https://github.com/LineageOS/android_device_qcom_common -b cm-14.1 ~/TWRP/device/qcom/common
-        git clone https://github.com/LineageOS/android_packages_resources_devicesettings -b cm-14.1 ~/TWRP/packages/resources/devicesettings
+        git clone https://github.com/LineageOS/android_external_stlport -b cm-14.1 ~/TWRP/external/stlport
+        git clone https://github.com/LineageOS/android_external_busybox -b cm-14.1 ~/TWRP/external/busybox
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
         source build/envsetup.sh
         export ALLOW_MISSING_DEPENDENCIES=true
-        export EXPERIMENTAL_USE_JAVA8=true
-        export USE_CCACHE=1
         export LC_ALL=C
         lunch lineage_loganreltexx-eng
         make -j$(nproc --all) otapackage
