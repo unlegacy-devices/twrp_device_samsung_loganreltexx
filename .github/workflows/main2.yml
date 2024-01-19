@@ -30,7 +30,7 @@ jobs:
         cd ~/TWRP
         mkdir ~/.bin
         curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/.bin/repo
-        python3 ~/.bin/repo init --depth=1 -u https://github.com/crdroidandroid/android.git -b 7.1
+        python3 ~/.bin/repo init --depth=1 -u https://github.com/unlegacy-devices/crdroidandroid.git -b 7.1
         git clone https://github.com/unlegacy-devices/crdroid_device_samsung_loganreltexx.git -b cm-14.1 ~/TWRP/device/samsung/loganreltexx
         git clone https://github.com/MSM8930-Samsung/android_kernel_samsung_msm8930-common -b cm-14.1 ~/TWRP/kernel/samsung/msm8930-common
         git clone https://github.com/MSM8930-Samsung/proprietary_vendor_samsung_loganreltexx -b cm-14.1 ~/TWRP/vendor/samsung/loganreltexx
@@ -42,6 +42,7 @@ jobs:
         export PATH="$HOME/.jdk_7/java-se-7u75-ri/bin:$PATH"
         export JAVA_HOME="$HOME/.jdk_7/java-se-7u75-ri"
         cd ~/TWRP
+        git clone https://github.com/LineageOS/android_external_chromium-webview -b main ~/TWRP/external/chromium-webview
         git clone https://github.com/MSM8930-Samsung/android_device_samsung_qcom-common -b cm-14.1 ~/TWRP/device/samsung/qcom-common
         git clone https://github.com/MSM8930-Samsung/android_device_samsung_msm8930-common -b cm-14.1 ~/TWRP/device/samsung/msm8930-common
         git clone https://github.com/LineageOS/android_hardware_samsung -b cm-14.1 ~/TWRP/hardware/samsung
