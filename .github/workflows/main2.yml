@@ -1,4 +1,4 @@
-name: LineageOS CI (SM-J320H)
+name: LineageOS CI
 
 on:
   workflow_dispatch:
@@ -31,7 +31,7 @@ jobs:
         mkdir ~/.bin
         curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/.bin/repo
         python3 ~/.bin/repo init --depth=1 -u https://github.com/LineageOS/android.git -b cm-14.1
-        git clone https://github.com/unlegacy-devices/android_device_samsung_loganreltexx.git -b cm-14.1 ~/TWRP/device/samsung/loganreltexx
+        git clone https://github.com/MSM8930-Samsung/android_device_samsung_loganreltexx.git -b cm-14.1 ~/TWRP/device/samsung/loganreltexx
         git clone https://github.com/MSM8930-Samsung/android_kernel_samsung_msm8930-common -b cm-14.1 ~/TWRP/kernel/samsung/msm8930-common
         git clone https://github.com/MSM8930-Samsung/proprietary_vendor_samsung_loganreltexx -b cm-14.1 ~/TWRP/vendor/samsung/loganreltexx
         python3 ~/.bin/repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
@@ -57,7 +57,7 @@ jobs:
         source build/envsetup.sh
         export ALLOW_MISSING_DEPENDENCIES=true
         export LC_ALL=C
-        lunch crdroid_loganreltexx-eng
+        lunch lineage_loganreltexx-eng
         make -j$(nproc --all) otapackage
         export PATH=$OLDPATH
         export JAVA_HOME=$OLDJAVAHOME
