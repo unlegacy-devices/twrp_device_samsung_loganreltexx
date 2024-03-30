@@ -30,7 +30,7 @@ jobs:
         cd ~/TWRP
         mkdir ~/.bin
         curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/.bin/repo
-        python3 ~/.bin/repo init --depth=1 -u https://github.com/google-aosp/android.git -b 7.1.1_r13
+        python3 ~/.bin/repo init --depth=1 -u https://github.com/unlegacy-devices/android2.git -b 7.1.1_r13
         git clone https://github.com/MSM8930-Samsung/android_device_samsung_loganreltexx.git -b cm-14.1 ~/TWRP/device/samsung/loganreltexx
         git clone https://github.com/MSM8930-Samsung/android_kernel_samsung_msm8930-common -b cm-14.1 ~/TWRP/kernel/samsung/msm8930-common
         git clone https://github.com/MSM8930-Samsung/proprietary_vendor_samsung_loganreltexx -b cm-14.1 ~/TWRP/vendor/samsung/loganreltexx
