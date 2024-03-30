@@ -46,12 +46,7 @@ jobs:
         git clone https://github.com/MSM8930-Samsung/android_device_samsung_msm8930-common -b cm-14.1 ~/TWRP/device/samsung/msm8930-common
         git clone https://github.com/LineageOS/android_hardware_samsung -b cm-14.1 ~/TWRP/hardware/samsung
         git clone https://github.com/LineageOS/android_device_qcom_common -b cm-14.1 ~/TWRP/device/qcom/common
-        git clone https://github.com/LineageOS/android_external_stlport -b cm-14.1 ~/TWRP/external/stlport
-        git clone https://github.com/LineageOS/android_external_busybox -b cm-14.1 ~/TWRP/external/busybox
         git clone https://github.com/LineageOS/android_packages_resources_devicesettings -b cm-14.1 ~/TWRP/packages/resources/devicesettings
-        git clone https://github.com/CyanogenMod/android_vendor_nxp-nfc_opensource_Nfc -b cm-14.1 ~/TWRP/vendor/nxp-nfc/opensource/Nfc
-        git clone https://github.com/CyanogenMod/android_vendor_nxp-nfc_opensource_libnfc-nci -b cm-14.1 ~/TWRP/vendor/nxp-nfc/opensource/libnfc-nci
-        git clone https://github.com/CyanogenMod/android_vendor_nxp-nfc_opensource_frameworks -b cm-14.1 ~/TWRP/vendor/nxp-nfc/opensource/frameworks
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
         source build/envsetup.sh
